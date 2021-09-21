@@ -120,6 +120,11 @@ article>div>div {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 3px 1.5px 4px 2px rgba(74, 74, 74, 0.8);
+}
+
+article>div>div:active{
+    box-shadow: 1.75px 1px 2.25px 1.25px rgba(74, 74, 74, 0.8);
 }
 
 article>div>div>p{

@@ -377,7 +377,8 @@ section p {
         let target = event.target;
         let key = target.lastElementChild.textContent
         if(key[2] == "#"){event.stopPropagation();
-
+        //     target.style.backgroundColor = 'yellow'
+        // setTimeout(() => {target.style.boxShadow = 'white'},300)
             piano.play(`${key[0]}#`, Number(key[1]), 2);
 
             return;
@@ -385,7 +386,7 @@ section p {
 
         // console.log(target.lastElementChild.textContent);
         target.style.backgroundColor = 'yellow'
-        setTimeout(() => {target.style.backgroundColor = 'white'},500)
+        setTimeout(() => {target.style.backgroundColor = 'white'},300)
 
 
         piano.play(key[0], Number(key[1]), 2);

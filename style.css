@@ -28,19 +28,22 @@ header {
 }
 header > p {
     width: max-content;
-
+    font-size: 24px;
     transform: rotate(180deg);
 
 }
 header > button {
     margin-left: 20px;
-
     width: max-content;
     background-color: transparent;
-    border: 1px solid;
-    transform: rotate(270deg);
+    border: none;
+    transform: rotate(270deg) translateY(-10px);
 }
+button svg {
 
+    width: 50px;
+    height: 50px;
+}
 
 article {
     height: 100%;

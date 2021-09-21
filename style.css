@@ -2,6 +2,8 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+font-family: 'Open Sans Condensed', sans-serif;
 }
 
 body {
@@ -10,6 +12,7 @@ body {
 }
 
 main {
+    opacity: 0;
     display: grid;
     grid-template-columns: 1fr 3fr;
     width: 100%;
@@ -31,8 +34,9 @@ header {
 
 header>p {
     width: max-content;
-    font-size: 24px;
+    font-size: 36px;
     transform: rotate(180deg);
+    font-weight: 600;
 }
 
 header>button {
@@ -158,57 +162,4 @@ article > div:not(:nth-of-type(3n)) {
 
 /* transform: translateY(2.5vh); */
 
-section{
-	margin: 0px;
-	background: radial-gradient(#CECECE, #fff);
-	display: flex;
-    flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
 
-}
-section p {
-    font-size: 24px;
-    padding-bottom: 100px;
-    /* margin-top: 100px; */
-}
-
-.container {
-	width: 350px;
-	height: 350px;
-	border-radius: 100%;
-	background: linear-gradient(165deg, rgba(255,255,255,1) 0%, rgb(220, 220, 220) 40%, rgb(170, 170, 170) 98%, rgb(10, 10, 10) 100%);
-	position: relative;
-}
-.loader {
-
-}
-
-.loader:before {
-	position: absolute;
-	content: '';
-	width: 100%;
-	height: 100%;
-	border-radius: 100%;
-	border-bottom: 0 solid #ffffff05;
-
-	box-shadow:
-		0 -10px 20px 20px #ffffff40 inset,
-		0 -5px 15px 10px #ffffff50 inset,
-		0 -2px 5px #ffffff80 inset,
-		0 -3px 2px #ffffffBB inset,
-		0 2px 0px #ffffff,
-		0 2px 3px #ffffff,
-		0 5px 5px #ffffff90,
-		0 10px 15px #ffffff60,
-		0 10px 20px 20px #ffffff40;
-	filter: blur(3px);
-	animation: 2s rotate linear infinite;
-}
-
-@keyframes rotate {
-	100% {
-		transform: rotate(360deg)
-	}
-}

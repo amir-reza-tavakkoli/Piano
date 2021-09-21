@@ -25,6 +25,7 @@ header {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    box-shadow: black 2px;
 }
 header > p {
     width: max-content;
@@ -38,8 +39,15 @@ header > button {
     background-color: transparent;
     border: none;
     transform: rotate(270deg) translateY(-10px);
+
 }
+
+header > button:hover {
+    width: 45px;
+}
+
 button svg {
+
 
     width: 50px;
     height: 50px;
@@ -48,9 +56,22 @@ button svg {
 article {
     height: 100%;
     background-color: rgba(240, 238, 238, 0.876);
+    overflow-y: scroll;
 }
 
+article > div {
+    background-color: white;
+    width: 95%;
+    height: 5%;
+    outline: solid 1px;
+}
 
+div > div {
+    width: 50%;
+    height: 80%;
+    transform: translateY(-40%);
+    background-color: black;
+}
 
 
 
@@ -76,7 +97,7 @@ article div:nth-of-type(3n) {
     /* border-left: black solid 1px; */
 }
 
-article div:nth-of-type(3n) div {
+/* article div:nth-of-type(3n) div {
     width: 100%;
     height: 5vh;
     transform: scaleX(2) translateY(-2.5vh) translateX(25%) ;
@@ -94,4 +115,4 @@ article > div:not(:nth-of-type(3n)) {
 
 /* transform: translateY(2.5vh); */
 border: black solid 1px;
-} */
+} */ */

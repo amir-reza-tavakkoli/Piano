@@ -29,15 +29,13 @@ section p {
 }
 
 .container {
-	width: 350px;
-	height: 350px;
+	width: 250px;
+	height: 250px;
 	border-radius: 100%;
 	background: linear-gradient(165deg, rgba(255,255,255,1) 0%, rgb(220, 220, 220) 40%, rgb(170, 170, 170) 98%, rgb(10, 10, 10) 100%);
 	position: relative;
 }
-.loader {
 
-}
 
 .loader:before {
 	position: absolute;
@@ -166,8 +164,7 @@ section p {
 
         <article id="buttons">
             <div>
-                <p>
-                    B6
+                <p>B6
                 </p>
             </div>
             <div>
@@ -206,8 +203,7 @@ section p {
             </div>
 
             <div>
-                <p>
-                    B5
+                <p>B5
                 </p>
             </div>
             <div>
@@ -246,8 +242,7 @@ section p {
                 <p>C5</p>
             </div>
             <div>
-                <p>
-                    B4
+                <p>B4
                 </p>
             </div>
             <div>
@@ -286,8 +281,7 @@ section p {
                 <p>C4</p>
             </div>
             <div>
-                <p>
-                    B3
+                <p>B3
                 </p>
             </div>
             <div>
@@ -326,8 +320,7 @@ section p {
                 <p>C3</p>
             </div>
             <div>
-                <p>
-                    B2
+                <p>B2
                 </p>
             </div>
             <div>
@@ -372,8 +365,11 @@ section p {
 
     <script defer>
         window.onload = function() {
-    document.getElementsByTagName('main')[0].style.opacity = 1;
+            setTimeout(()=>{
+                document.getElementsByTagName('main')[0].style.opacity = 1;
     document.getElementsByTagName('section')[0].style.display = 'none'
+            },2000)
+
 }
         var piano = Synth.createInstrument('piano');
         let container = document.querySelectorAll("#buttons")[0]

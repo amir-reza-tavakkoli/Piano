@@ -375,8 +375,18 @@ section p {
         let container = document.querySelectorAll("#buttons")[0]
         container.onclick = function(event) {
         let target = event.target;
-        console.log(target.lastElementChild.textContent);
         let key = target.lastElementChild.textContent
+        if(key[2] == "#"){event.stopPropagation();
+
+            piano.play(`${key[0]}#`, Number(key[1]), 2);
+
+            return;
+        }
+
+        // console.log(target.lastElementChild.textContent);
+        target.style.backgroundColor = 'yellow'
+        setTimeout(() => {target.style.backgroundColor = 'white'},500)
+
 
         piano.play(key[0], Number(key[1]), 2);
   }

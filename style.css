@@ -22,7 +22,10 @@ main {
 
 header {
     height: 100%;
-    background-color: rgb(130, 238, 224);
+    background-color: #C5C5C5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23C5C5C5'/%3E%3Cstop offset='1' stop-color='%233F3F3D'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%2396B9B6' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%2396B9B6' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%2396B9B6' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%2396B9B6' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.76'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
     writing-mode: vertical-lr;
     display: flex;
     flex-direction: row;
@@ -40,6 +43,7 @@ header>p {
 }
 
 header>button {
+    padding: 5px;
     margin-left: 20px;
     width: max-content;
     background-color: transparent;
@@ -47,10 +51,16 @@ header>button {
     transform: rotate(270deg) translateY(-10px);
 }
 
-header>button:hover {
+/* header>button:hover {
     width: 45px;
-}
+} */
 
+header>button:hover::after{
+    content: 'hey';
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
 button svg {
     width: 50px;
     height: 50px;
@@ -77,9 +87,9 @@ article>div {
 /* handle with js */
 
 article>div:active {
-    background-color: yellow;
-    height: 4.9%;
-    box-shadow: 3px 0px 2px rgb(0, 0, 0, 0.8);
+
+    width: 98%;
+    box-shadow: 5px 3px 2px 2px rgba(74, 74, 74, 0.8);
 }
 
 article>div>p {

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" type="module"></script>
+    <script src="audiosynth.js"></script>
+
     <title>Piano</title>
 </head>
 
@@ -93,14 +94,13 @@
                 </button>
         </header>
 
-        <article>
+        <article id="buttons">
             <div>
                 <p>
                     B6
                 </p>
             </div>
             <div>
-
                 <div>
                     <p>A6#</p>
                 </div>
@@ -307,5 +307,16 @@
             </div>
         </div>
     </section>
+    <script defer>
+        var piano = Synth.createInstrument('piano');
+        let container = document.querySelectorAll("#buttons")[0]
+        container.onclick = function(event) {
+        let target = event.target;
+        console.log(target.lastElementChild.textContent);
+        let key = target.lastElementChild.textContent
+
+        piano.play(key[0], Number(key[1]), 2);
+  }
+    </script>
 </body>
 </html>

@@ -26,29 +26,28 @@ header {
     justify-content: space-around;
     align-items: center;
     box-shadow: black 2px;
+    border-right: 1px solid;
 }
-header > p {
+
+header>p {
     width: max-content;
     font-size: 24px;
     transform: rotate(180deg);
-
 }
-header > button {
+
+header>button {
     margin-left: 20px;
     width: max-content;
     background-color: transparent;
     border: none;
     transform: rotate(270deg) translateY(-10px);
-
 }
 
-header > button:hover {
+header>button:hover {
     width: 45px;
 }
 
 button svg {
-
-
     width: 50px;
     height: 50px;
 }
@@ -59,25 +58,37 @@ article {
     overflow-y: scroll;
 }
 
-article > div {
+article>div {
     background-color: white;
-    width: 95%;
+    width: 99%;
     height: 5%;
     outline: solid 1px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 28px 5px 21px 0px rgba(45,45,45,0.65);
+
 }
-article > div > p {
+
+/* handle with js */
+
+article>div:active {
+    background-color: yellow;
+    height: 4.9%;
+    box-shadow: 3px 0px 2px rgb(0, 0, 0, 0.8);
+}
+
+article>div>p {
     margin: 0px;
     font-size: 12px;
     opacity: 0.5;
-text-align: center;
-margin-left: auto;
+    text-align: center;
+    margin-left: auto;
     width: max-content;
     height: max-content;
     transform: rotate(-90deg);
 }
+
 /* article > div:nth-of-type(1) > p,article > div:nth-of-type(8n) > p {
 transform: rotate(-90deg) translateX(-10px);
 }
@@ -85,15 +96,27 @@ article > div:nth-of-type(7n) > p {
     transform: rotate(-90deg) translateX(18px);
 } */
 
-article > div > div {
+article>div>div {
     width: 50%;
     height: 80%;
     transform: translateY(-55%);
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+article>div>div>p{
+    margin: 0px;
+    font-size: 10px;
 
-
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    width: max-content;
+    height: max-content;
+    transform: rotate(-90deg);
+}
 /*
 
 
@@ -114,6 +137,7 @@ article div:nth-of-type(3n) {
     position: relative;
     z-index: 5;
     /* border-left: black solid 1px; */
+
 }
 
 /* article div:nth-of-type(3n) div {
@@ -133,5 +157,8 @@ article > div:not(:nth-of-type(3n)) {
     box-shadow: 15px 2px 6px -2px rgba(62,9,9,1);
 
 /* transform: translateY(2.5vh); */
+
 border: black solid 1px;
-} */ */
+}
+
+*/ */

@@ -1,155 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="audiosynth.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+        <style>
+            section {
+            margin: 0px;
+            background: radial-gradient(#CECECE, #fff);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="audiosynth.js"></script>
+            }
+            section p {
+                font-size: 24px;
+                padding-bottom: 100px;
+                /* margin-top: 100px; */
+            }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+            .container {
+                width: 250px;
+                height: 250px;
+                border-radius: 100%;
+                background: linear-gradient(165deg, rgba(255,255,255,1) 0%, rgb(220, 220, 220) 40%, rgb(170, 170, 170) 98%, rgb(10, 10, 10) 100%);
+                position: relative;
+            }
 
-<style>
-    section{
-	margin: 0px;
-	background: radial-gradient(#CECECE, #fff);
-	display: flex;
-    flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+            .loader:before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                border-bottom: 0 solid #ffffff05;
 
-}
-section p {
-    font-size: 24px;
-    padding-bottom: 100px;
-    /* margin-top: 100px; */
-}
+                box-shadow:
+                    0 -10px 20px 20px #ffffff40 inset,
+                    0 -5px 15px 10px #ffffff50 inset,
+                    0 -2px 5px #ffffff80 inset,
+                    0 -3px 2px #ffffffBB inset,
+                    0 2px 0px #ffffff,
+                    0 2px 3px #ffffff,
+                    0 5px 5px #ffffff90,
+                    0 10px 15px #ffffff60,
+                    0 10px 20px 20px #ffffff40;
+                filter: blur(3px);
+                animation: 2s rotate linear infinite;
+            }
 
-.container {
-	width: 250px;
-	height: 250px;
-	border-radius: 100%;
-	background: linear-gradient(165deg, rgba(255,255,255,1) 0%, rgb(220, 220, 220) 40%, rgb(170, 170, 170) 98%, rgb(10, 10, 10) 100%);
-	position: relative;
-}
-
-
-.loader:before {
-	position: absolute;
-	content: '';
-	width: 100%;
-	height: 100%;
-	border-radius: 100%;
-	border-bottom: 0 solid #ffffff05;
-
-	box-shadow:
-		0 -10px 20px 20px #ffffff40 inset,
-		0 -5px 15px 10px #ffffff50 inset,
-		0 -2px 5px #ffffff80 inset,
-		0 -3px 2px #ffffffBB inset,
-		0 2px 0px #ffffff,
-		0 2px 3px #ffffff,
-		0 5px 5px #ffffff90,
-		0 10px 15px #ffffff60,
-		0 10px 20px 20px #ffffff40;
-	filter: blur(3px);
-	animation: 2s rotate linear infinite;
-}
-
-@keyframes rotate {
-	100% {
-		transform: rotate(360deg)
-	}
-}
-</style>
-
-    <title>Piano</title>
-</head>
-
-<body>
-    <section>
-        <p>Welcome!</p>
-        <div class="container">
-            <div class="loader">
-
+            @keyframes rotate {
+                100% {
+                    transform: rotate(360deg)
+                }
+            }
+        </style>
+        <title>Piano</title>
+    </head>
+    <body>
+        <section>
+            <p>Welcome!</p>
+            <div class="container">
+                <div class="loader"></div>
             </div>
-        </div>
-    </section>
-
-
-    <main>
-        <header>
-            <button>
-                <svg version="1.1" x="0px" y="0px"
-	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-<circle cx="8" cy="8" r="8"/>
-</svg>
-            </button>
-            <button>
-                <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                <svg version="1.1" id="Icons" x="0px" y="0px"
-                     viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                <style type="text/css">
-                    .st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-                </style>
-                <circle class="st0" cx="23" cy="7" r="3"/>
-                <line class="st0" x1="3" y1="7" x2="20" y2="7"/>
-                <line class="st0" x1="29" y1="7" x2="26" y2="7"/>
-                <circle class="st0" cx="12" cy="16" r="3"/>
-                <line class="st0" x1="3" y1="16" x2="9" y2="16"/>
-                <line class="st0" x1="29" y1="16" x2="15" y2="16"/>
-                <circle class="st0" cx="23" cy="25" r="3"/>
-                <line class="st0" x1="3" y1="25" x2="20" y2="25"/>
-                <line class="st0" x1="29" y1="25" x2="26" y2="25"/>
-                </svg>
+        </section>
+        <main>
+            <header>
+                <button>
+                    <svg
+                        version="1.1"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 16 16"
+                        style="enable-background:new 0 0 16 16;"
+                        xml:space="preserve"
+                    >
+                        <circle cx="8" cy="8" r="8"/>
+                    </svg>
                 </button>
-            <p>Simplified Piano</p>
-            <button>
-                <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
-                    <title>screen_rotation</title>
-                    <desc>Created with Sketch.</desc>
-                    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g id="Rounded" transform="translate(-882.000000, -1792.000000)">
-                            <g id="Device" transform="translate(100.000000, 1650.000000)">
-                                <g id="Round-/-Device-/-screen_rotation" transform="translate(782.000000, 142.000000)">
-                                    <g>
-                                        <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
-                                        <path d="M10.23,1.75 C9.64,1.16 8.69,1.16 8.11,1.75 L1.75,8.11 C1.16,8.7 1.16,9.65 1.75,10.23 L13.77,22.25 C14.36,22.84 15.31,22.84 15.89,22.25 L22.25,15.89 C22.84,15.3 22.84,14.35 22.25,13.77 L10.23,1.75 Z M14.12,20.48 L3.52,9.88 C3.13,9.49 3.13,8.86 3.52,8.47 L8.47,3.52 C8.86,3.13 9.49,3.13 9.88,3.52 L20.49,14.13 C20.88,14.52 20.88,15.15 20.49,15.54 L15.54,20.49 C15.15,20.87 14.51,20.87 14.12,20.48 Z M17.61,1.4 C16.04,0.57 14.06,-0.03 11.81,0.02 C11.63,0.02 11.55,0.24 11.67,0.37 L15.15,3.85 L16.48,2.52 C19.57,3.98 21.82,6.89 22.37,10.38 C22.43,10.79 22.81,11.07 23.23,11 C23.64,10.94 23.92,10.55 23.85,10.14 C23.25,6.34 20.89,3.14 17.61,1.4 Z M8.85,20.16 L7.52,21.49 C4.43,20.03 2.18,17.12 1.63,13.63 C1.57,13.22 1.19,12.94 0.77,13.01 C0.36,13.07 0.08,13.46 0.15,13.87 C0.75,17.68 3.11,20.88 6.39,22.62 C7.96,23.45 9.94,24.05 12.19,24 C12.37,24 12.45,23.78 12.33,23.65 L8.85,20.16 Z" id="🔹-Icon-Color" fill="#1D1D1D"></path>
+                <button>
+                    <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                    <svg
+                        version="1.1"
+                        id="Icons"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 32 32"
+                        style="enable-background:new 0 0 32 32;"
+                        xml:space="preserve"
+                    >
+                        <style type="text/css">
+                    .st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+                        </style>
+                        <circle
+                            class="st0"
+                            cx="23"
+                            cy="7"
+                            r="3"
+                        />
+                        <line
+                            class="st0"
+                            x1="3"
+                            y1="7"
+                            x2="20"
+                            y2="7"
+                        />
+                        <line
+                            class="st0"
+                            x1="29"
+                            y1="7"
+                            x2="26"
+                            y2="7"
+                        />
+                        <circle
+                            class="st0"
+                            cx="12"
+                            cy="16"
+                            r="3"
+                        />
+                        <line
+                            class="st0"
+                            x1="3"
+                            y1="16"
+                            x2="9"
+                            y2="16"
+                        />
+                        <line
+                            class="st0"
+                            x1="29"
+                            y1="16"
+                            x2="15"
+                            y2="16"
+                        />
+                        <circle
+                            class="st0"
+                            cx="23"
+                            cy="25"
+                            r="3"
+                        />
+                        <line
+                            class="st0"
+                            x1="3"
+                            y1="25"
+                            x2="20"
+                            y2="25"
+                        />
+                        <line
+                            class="st0"
+                            x1="29"
+                            y1="25"
+                            x2="26"
+                            y2="25"
+                        />
+                    </svg>
+                </button>
+                <p>Simplified Piano</p>
+                <button>
+                    <svg
+                        width="24px"
+                        height="24px"
+                        viewBox="0 0 24 24"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                    >
+                        <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+                        <title>screen_rotation</title>
+                        <desc>Created with Sketch.</desc>
+                        <g
+                            id="Icons"
+                            stroke="none"
+                            stroke-width="1"
+                            fill="none"
+                            fill-rule="evenodd"
+                        >
+                            <g id="Rounded" transform="translate(-882.000000, -1792.000000)">
+                                <g id="Device" transform="translate(100.000000, 1650.000000)">
+                                    <g id="Round-/-Device-/-screen_rotation" transform="translate(782.000000, 142.000000)">
+                                        <g>
+                                            <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+                                            <path d="M10.23,1.75 C9.64,1.16 8.69,1.16 8.11,1.75 L1.75,8.11 C1.16,8.7 1.16,9.65 1.75,10.23 L13.77,22.25 C14.36,22.84 15.31,22.84 15.89,22.25 L22.25,15.89 C22.84,15.3 22.84,14.35 22.25,13.77 L10.23,1.75 Z M14.12,20.48 L3.52,9.88 C3.13,9.49 3.13,8.86 3.52,8.47 L8.47,3.52 C8.86,3.13 9.49,3.13 9.88,3.52 L20.49,14.13 C20.88,14.52 20.88,15.15 20.49,15.54 L15.54,20.49 C15.15,20.87 14.51,20.87 14.12,20.48 Z M17.61,1.4 C16.04,0.57 14.06,-0.03 11.81,0.02 C11.63,0.02 11.55,0.24 11.67,0.37 L15.15,3.85 L16.48,2.52 C19.57,3.98 21.82,6.89 22.37,10.38 C22.43,10.79 22.81,11.07 23.23,11 C23.64,10.94 23.92,10.55 23.85,10.14 C23.25,6.34 20.89,3.14 17.61,1.4 Z M8.85,20.16 L7.52,21.49 C4.43,20.03 2.18,17.12 1.63,13.63 C1.57,13.22 1.19,12.94 0.77,13.01 C0.36,13.07 0.08,13.46 0.15,13.87 C0.75,17.68 3.11,20.88 6.39,22.62 C7.96,23.45 9.94,24.05 12.19,24 C12.37,24 12.45,23.78 12.33,23.65 L8.85,20.16 Z" id="🔹-Icon-Color" fill="#1D1D1D"></path>
+                                        </g>
                                     </g>
                                 </g>
                             </g>
                         </g>
-                    </g>
-                </svg></button>
-            <button><?xml version="1.0" encoding="utf-8"?>
-                <!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                     viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
-                <g>
-                    <g>
-                        <path fill="#000" d="M38.0146294,23.6788578H14.2315149c-0.8011303,0-1.4506016-0.6494312-1.4506016-1.4505615
+                    </svg>
+                </button>
+                <button>
+                    <svg
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 64 64"
+                        enable-background="new 0 0 64 64"
+                        xml:space="preserve"
+                    >
+                        <g>
+                            <g>
+                                <path fill="#000" d="M38.0146294,23.6788578H14.2315149c-0.8011303,0-1.4506016-0.6494312-1.4506016-1.4505615
                             c0-0.8011703,0.6494713-1.4506016,1.4506016-1.4506016h23.7831154c0.8011284,0,1.4505615,0.6494312,1.4505615,1.4506016
                             C39.4651909,23.0294266,38.8157578,23.6788578,38.0146294,23.6788578z"/>
-                    </g>
-                    <path fill="#000" d="M32.0653381,35.3470993h-17.833828c-0.801115,0-1.4506054,0.6494522-1.4506054,1.4505692
+                            </g>
+                            <path fill="#000" d="M32.0653381,35.3470993h-17.833828c-0.801115,0-1.4506054,0.6494522-1.4506054,1.4505692
                         c0,0.8011894,0.6494904,1.4506073,1.4506054,1.4506073h16.6040115L32.0653381,35.3470993z"/>
-                    <path fill="#000" d="M35.0975151,28.1942616H14.2315092c-0.801115,0-1.4506054,0.6494179-1.4506054,1.4506054
+                            <path fill="#000" d="M35.0975151,28.1942616H14.2315092c-0.801115,0-1.4506054,0.6494179-1.4506054,1.4506054
                         c0,0.801115,0.6494904,1.4505692,1.4506054,1.4505692h19.6361847L35.0975151,28.1942616z"/>
-                    <g>
-
-                            <rect x="36.4750786" y="20.7182274" transform="matrix(0.7071068 -0.7071068 0.7071068 0.7071068 -2.6814406 40.4743538)" fill="#000" width="22.0821362" height="5.5114694"/>
-                        <polygon fill="#000" points="40.4722099,34.0227013 34.05336,36.7438889 36.7745323,30.3250237 		"/>
-                        <g>
-                            <path fill="#000" d="M59.211319,13.9993896l-2.2232742-2.2232742c-0.4621048-0.4621067-1.2113266-0.4621067-1.6734352,0
+                            <g>
+                                <rect
+                                    x="36.4750786"
+                                    y="20.7182274"
+                                    transform="matrix(0.7071068 -0.7071068 0.7071068 0.7071068 -2.6814406 40.4743538)"
+                                    fill="#000"
+                                    width="22.0821362"
+                                    height="5.5114694"
+                                />
+                                <polygon fill="#000" points="40.4722099,34.0227013 34.05336,36.7438889 36.7745323,30.3250237 		"/>
+                                <g>
+                                    <path fill="#000" d="M59.211319,13.9993896l-2.2232742-2.2232742c-0.4621048-0.4621067-1.2113266-0.4621067-1.6734352,0
                                 l-0.9523888,0.9523916l3.8967056,3.8967066l0.9523926-0.9523907
                                 C59.6734238,15.2107172,59.6734238,14.4614954,59.211319,13.9993896z"/>
-                        </g>
-                    </g>
-                    <path fill="#000" d="M44.3449783,41.1361237c0,0.9467964-0.7675133,1.7143097-1.7143097,1.7143097H25.4305229
+                                </g>
+                            </g>
+                            <path fill="#000" d="M44.3449783,41.1361237c0,0.9467964-0.7675133,1.7143097-1.7143097,1.7143097H25.4305229
                         c-0.1934547,0-0.3849525,0.0386391-0.5632935,0.113636L7.9011383,50.1000175V18.680975
                         c0-1.3837643,1.1217642-2.5054932,2.5054922-2.5054932h31.4328537c1.383728,0,2.5054932,1.1217289,2.5054932,2.5054932v0.7074127
                         l0.0007973-0.0003624l2.9003754-2.900341v-3.2527065c0-1.6399641-1.329464-2.969429-2.969429-2.969429H7.9694295
@@ -157,240 +239,235 @@ section p {
                         c0.2413387,0.1604347,0.5211363,0.2423897,0.8026738,0.2423897c0.1903377,0,0.3815818-0.0373726,0.5622416-0.1136017
                         l18.7094345-7.8692398h16.9083138c2.5490608,0,4.6154823-2.0664215,4.6154823-4.6154861v-10.13517l-2.9011726,2.9012108V41.1361237
                         z"/>
-                </g>
-                </svg>
+                        </g>
+                    </svg>
                 </button>
-        </header>
-
-        <article id="buttons">
-            <div>
-                <p>B6
-                </p>
-            </div>
-            <div>
+            </header>
+            <article id="buttons">
                 <div>
-                    <p>A6#</p>
+                    <p>
+                        B6
+                    </p>
                 </div>
-                <p>A6</p>
-
-            </div>
-            <div>
                 <div>
-                    <p>G6#</p>
+                    <div>
+                        <p>A6#</p>
+                    </div>
+                    <p>A6</p>
                 </div>
-                <p>G6</p>
-            </div>
-            <div>
                 <div>
-                    <p>F6#</p>
+                    <div>
+                        <p>G6#</p>
+                    </div>
+                    <p>G6</p>
                 </div>
-                <p>F6</p>
-            </div>
-            <div>
-                <p>E6</p>
-            </div>
-            <div>
                 <div>
-                    <p>D6#</p>
+                    <div>
+                        <p>F6#</p>
+                    </div>
+                    <p>F6</p>
                 </div>
-                <p>D6</p>
-            </div>
-            <div>
                 <div>
-                    <p>C6#</p>
+                    <p>E6</p>
                 </div>
-                <p>C6</p>
-            </div>
-
-            <div>
-                <p>B5
-                </p>
-            </div>
-            <div>
-
                 <div>
-                    <p>A5#</p>
+                    <div>
+                        <p>D6#</p>
+                    </div>
+                    <p>D6</p>
                 </div>
-                <p>A5</p>
-
-            </div>
-            <div>
                 <div>
-                    <p>G5#</p>
+                    <div>
+                        <p>C6#</p>
+                    </div>
+                    <p>C6</p>
                 </div>
-                <p>G5</p>
-            </div>
-            <div>
                 <div>
-                    <p>F5#</p>
+                    <p>
+                        B5
+                    </p>
                 </div>
-                <p>F5</p>
-            </div>
-            <div>
-                <p>E5</p>
-            </div>
-            <div>
                 <div>
-                    <p>D5#</p>
+                    <div>
+                        <p>A5#</p>
+                    </div>
+                    <p>A5</p>
                 </div>
-                <p>D5</p>
-            </div>
-            <div>
                 <div>
-                    <p>C5#</p>
+                    <div>
+                        <p>G5#</p>
+                    </div>
+                    <p>G5</p>
                 </div>
-                <p>C5</p>
-            </div>
-            <div>
-                <p>B4
-                </p>
-            </div>
-            <div>
-
                 <div>
-                    <p>A4#</p>
+                    <div>
+                        <p>F5#</p>
+                    </div>
+                    <p>F5</p>
                 </div>
-                <p>A4</p>
-
-            </div>
-            <div>
                 <div>
-                    <p>G4#</p>
+                    <p>E5</p>
                 </div>
-                <p>G4</p>
-            </div>
-            <div>
                 <div>
-                    <p>F4#</p>
+                    <div>
+                        <p>D5#</p>
+                    </div>
+                    <p>D5</p>
                 </div>
-                <p>F4</p>
-            </div>
-            <div>
-                <p>E4</p>
-            </div>
-            <div>
                 <div>
-                    <p>D4#</p>
+                    <div>
+                        <p>C5#</p>
+                    </div>
+                    <p>C5</p>
                 </div>
-                <p>D4</p>
-            </div>
-            <div>
                 <div>
-                    <p>C4#</p>
+                    <p>
+                        B4
+                    </p>
                 </div>
-                <p>C4</p>
-            </div>
-            <div>
-                <p>B3
-                </p>
-            </div>
-            <div>
-
                 <div>
-                    <p>A3#</p>
+                    <div>
+                        <p>A4#</p>
+                    </div>
+                    <p>A4</p>
                 </div>
-                <p>A3</p>
-
-            </div>
-            <div>
                 <div>
-                    <p>G3#</p>
+                    <div>
+                        <p>G4#</p>
+                    </div>
+                    <p>G4</p>
                 </div>
-                <p>G3</p>
-            </div>
-            <div>
                 <div>
-                    <p>F3#</p>
+                    <div>
+                        <p>F4#</p>
+                    </div>
+                    <p>F4</p>
                 </div>
-                <p>F3</p>
-            </div>
-            <div>
-                <p>E3</p>
-            </div>
-            <div>
                 <div>
-                    <p>D3#</p>
+                    <p>E4</p>
                 </div>
-                <p>D3</p>
-            </div>
-            <div>
                 <div>
-                    <p>C3#</p>
+                    <div>
+                        <p>D4#</p>
+                    </div>
+                    <p>D4</p>
                 </div>
-                <p>C3</p>
-            </div>
-            <div>
-                <p>B2
-                </p>
-            </div>
-            <div>
-
                 <div>
-                    <p>A2#</p>
+                    <div>
+                        <p>C4#</p>
+                    </div>
+                    <p>C4</p>
                 </div>
-                <p>A2</p>
-
-            </div>
-            <div>
                 <div>
-                    <p>G2#</p>
+                    <p>
+                        B3
+                    </p>
                 </div>
-                <p>G2</p>
-            </div>
-            <div>
                 <div>
-                    <p>F2#</p>
+                    <div>
+                        <p>A3#</p>
+                    </div>
+                    <p>A3</p>
                 </div>
-                <p>F2</p>
-            </div>
-            <div>
-                <p>E2</p>
-            </div>
-            <div>
                 <div>
-                    <p>D2#</p>
+                    <div>
+                        <p>G3#</p>
+                    </div>
+                    <p>G3</p>
                 </div>
-                <p>D2</p>
-            </div>
-            <div>
                 <div>
-                    <p>C2#</p>
+                    <div>
+                        <p>F3#</p>
+                    </div>
+                    <p>F3</p>
                 </div>
-                <p>C2</p>
-            </div>
-
-        </article>
-    </main>
+                <div>
+                    <p>E3</p>
+                </div>
+                <div>
+                    <div>
+                        <p>D3#</p>
+                    </div>
+                    <p>D3</p>
+                </div>
+                <div>
+                    <div>
+                        <p>C3#</p>
+                    </div>
+                    <p>C3</p>
+                </div>
+                <div>
+                    <p>
+                        B2
+                    </p>
+                </div>
+                <div>
+                    <div>
+                        <p>A2#</p>
+                    </div>
+                    <p>A2</p>
+                </div>
+                <div>
+                    <div>
+                        <p>G2#</p>
+                    </div>
+                    <p>G2</p>
+                </div>
+                <div>
+                    <div>
+                        <p>F2#</p>
+                    </div>
+                    <p>F2</p>
+                </div>
+                <div>
+                    <p>E2</p>
+                </div>
+                <div>
+                    <div>
+                        <p>D2#</p>
+                    </div>
+                    <p>D2</p>
+                </div>
+                <div>
+                    <div>
+                        <p>C2#</p>
+                    </div>
+                    <p>C2</p>
+                </div>
+            </article>
+        </main>
 
 
-    <script defer>
-        window.onload = function() {
-            setTimeout(()=>{
+        <script defer>
+            const isTouchDevice = () => {
+            return (('ontouchstart' in window) ||
+                (navigator.maxTouchPoints > 0) ||
+                (navigator.msMaxTouchPoints > 0));
+            }
+            console.log(isTouchDevice())
+            window.onload = function() {
+                setTimeout(()=>{
                 document.getElementsByTagName('main')[0].style.opacity = 1;
-    document.getElementsByTagName('section')[0].style.display = 'none'
-            },2000)
+                document.getElementsByTagName('section')[0].style.display = 'none'
+                        },0)
 
-}
+            }
+
         var piano = Synth.createInstrument('piano');
         let container = document.querySelectorAll("#buttons")[0]
         container.onclick = function(event) {
-        let target = event.target;
-        let key = target.lastElementChild.textContent
-        if(key[2] == "#"){event.stopPropagation();
-        //     target.style.backgroundColor = 'yellow'
-        // setTimeout(() => {target.style.boxShadow = 'white'},300)
-            piano.play(`${key[0]}#`, Number(key[1]), 2);
+            let target = event.target;
+            let key = target.lastElementChild.textContent
+            if(key[2] == "#"){event.stopPropagation();
+                piano.play(`${key[0]}#`, Number(key[1]), 2);
+                return;
+            }
 
-            return;
-        }
-
-        // console.log(target.lastElementChild.textContent);
         target.style.backgroundColor = 'yellow'
         setTimeout(() => {target.style.backgroundColor = 'white'},300)
-
-
         piano.play(key[0], Number(key[1]), 2);
-  }
-    </script>
-</body>
+        }
+        
+        </script>
+    </body>
 </html>

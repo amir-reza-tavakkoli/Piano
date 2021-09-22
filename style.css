@@ -3,7 +3,7 @@
     margin: 0px;
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
-font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 body {
@@ -51,16 +51,13 @@ header>button {
     transform: rotate(270deg) translateY(-10px);
 }
 
-/* header>button:hover {
-    width: 45px;
-} */
-
-header>button:hover::after{
+header>button:hover::after {
     content: 'hey';
     background-color: black;
     color: white;
     padding: 5px;
 }
+
 button svg {
     width: 50px;
     height: 50px;
@@ -80,14 +77,12 @@ article>div {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 28px 5px 21px 0px rgba(45,45,45,0.65);
-
+    box-shadow: 28px 5px 21px 0px rgba(45, 45, 45, 0.65);
 }
 
 /* handle with js */
 
 article>div:active {
-
     width: 98%;
     box-shadow: 5px 3px 2px 2px rgba(74, 74, 74, 0.8);
 }
@@ -105,13 +100,6 @@ article>div>p {
     transform: rotate(-90deg);
 }
 
-/* article > div:nth-of-type(1) > p,article > div:nth-of-type(8n) > p {
-transform: rotate(-90deg) translateX(-10px);
-}
-article > div:nth-of-type(7n) > p {
-    transform: rotate(-90deg) translateX(18px);
-} */
-
 article>div>div {
     width: 50%;
     height: 80%;
@@ -123,14 +111,14 @@ article>div>div {
     box-shadow: 3px 1.5px 4px 2px rgba(74, 74, 74, 0.8);
 }
 
-article>div>div:active{
+article>div>div:active {
     box-shadow: 1.75px 1px 2.25px 1.25px rgba(74, 74, 74, 0.8);
 }
 
-article>div>div>p{
+article>div>div>p {
     margin: 0px;
     font-size: 14px;
-opacity: 0.8;
+    opacity: 0.8;
     color: white;
     text-align: center;
     margin-left: auto;
@@ -138,43 +126,3 @@ opacity: 0.8;
     height: max-content;
     transform: rotate(-90deg);
 }
-/*
-
-
-div {
-    width: 30%;
-    height: 5vh;
-    background-color: white;
-
-
-
-}
-
-article div:nth-of-type(3n) {
-    width: 15%;
-    height: 5vh;
-    background-color: black;
-    transform: translateY(2.5vh);
-    position: relative;
-    z-index: 5;
-    /* border-left: black solid 1px; */
-
-
-
-/* article div:nth-of-type(3n) div {
-    width: 100%;
-    height: 5vh;
-    transform: scaleX(2) translateY(-2.5vh) translateX(25%) ;
-    background-color: white;
-    z-index: 0;
-    position:absolute;
-    border-right: black solid 1px;
-    border-left: black solid 1px;
-
-    box-shadow: 10px 2px 6px -2px rgba(62,9,9,1);
-
-}
-article > div:not(:nth-of-type(3n)) {
-    box-shadow: 15px 2px 6px -2px rgba(62,9,9,1);
-
-/* transform: translateY(2.5vh); */

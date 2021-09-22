@@ -1,3 +1,5 @@
+/* generall styles @@ */
+
 * {
     padding: 0px;
     margin: 0px;
@@ -15,15 +17,18 @@ body {
 }
 
 button svg {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
+
+/* whole page @@ */
 
 main {
     opacity: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 255, 0.342);
+
 }
 
 main[data-orientation='o'] {
@@ -33,8 +38,12 @@ main[data-orientation='o'] {
 }
 
 main[data-orientation='p'] {
+    width: 200%;
     display: grid;
     grid-template-rows: 1fr 3fr;
+    /* background-color: transparent; */
+    /* height: 90%; */
+
 }
 
 header {
@@ -56,11 +65,15 @@ header[data-orientation='o'] {
 }
 
 header[data-orientation='p'] {
-    width: 100%;
+    opacity: 1;
+    /* background-color: white !important; */
+    width: 50%;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid;
+    /* position: fixed; */
+
 }
 
 header>p {
@@ -102,15 +115,18 @@ header[data-orientation='o']>button:hover::after {
 }
 
 header[data-orientation='p']>button:hover::after {
-    position: absolute;
-    top: 40px;
-    left: 40px;
+    position: relative;
+    top: 20px;
+    left: 20px;
 }
 
+header[data-orientation='o']>button:last-child::after {
+    top: 40px;
+    right: -50px;
+}
 
 article {
     background-color: rgba(240, 238, 238, 0.876);
-    /* overflow-x: scroll; */
 }
 
 article[data-orientation='o'] {
@@ -119,25 +135,33 @@ article[data-orientation='o'] {
 }
 
 article[data-orientation='p'] {
+
+    display: inline-flex;
+    /* justify-content: center; */
     width: 100%;
     height: 100%;
     overflow-x: scroll;
+
 }
 
 article>div {
     background-color: white;
     outline: solid 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 article[data-orientation='p']>div {
-    width: 50%;
-    height: 9%;
+    width: 100px;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+
+    box-shadow: 5px 14px 21px 2px rgba(45, 45, 45, 0.65);
 }
 
 article[data-orientation='o']>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 99%;
     height: 5%;
     box-shadow: 28px 5px 21px 0px rgba(45, 45, 45, 0.65);
@@ -145,37 +169,57 @@ article[data-orientation='o']>div {
 
 /* handle with js */
 
-article>div:active {
+article[data-orientation='o']>div:active {
     width: 98%;
     box-shadow: 5px 3px 2px 2px rgba(74, 74, 74, 0.8);
 }
 
+article[data-orientation='p']>div:active {
+    box-shadow: 3px 1px 2px 2px rgba(74, 74, 74, 0.8);
+}
+
 article>div>p {
-    margin: 0px;
-    margin-right: 2px;
     font-size: 14px;
     font-weight: 600;
     opacity: 0.6;
     text-align: center;
-    margin-left: auto;
     width: max-content;
     height: max-content;
-    transform: rotate(-90deg);
+}
+
+article[data-orientation='o']>div>p {
+    margin: 0px;
+    margin-right: 2px;
+    margin-left: auto;
+
+}
+
+article[data-orientation='p']>div>p {
+    margin-top: auto;
+
 }
 
 article>div>div {
-
-
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-article[data-orientation='o']>div>div{    width: 50%;
+
+article[data-orientation='o']>div>div {
+    width: 50%;
     box-shadow: 3px 1.5px 4px 2px rgba(74, 74, 74, 0.8);
-    height: 80%;transform: translateY(-55%);}
-article[data-orientation='p']>div>div{    width: 80%;
-    height: 50%;transform: translateX(-55%);}
+    height: 80%;
+    transform: translateY(-55%);
+}
+
+article[data-orientation='p']>div>div {
+    width: 50%;
+    height: 50%;
+    box-shadow: 3px 1.5px 4px 2px rgba(74, 74, 74, 0.8);
+
+    transform: translateX(-55%);
+}
 
 article>div>div:active {
     box-shadow: 1.75px 1px 2.25px 1.25px rgba(74, 74, 74, 0.8);
@@ -183,12 +227,23 @@ article>div>div:active {
 
 article>div>div>p {
     margin: 0px;
-    font-size: 14px;
     opacity: 0.8;
     color: white;
     text-align: center;
     margin-left: auto;
     width: max-content;
     height: max-content;
+}
+
+article[data-orientation='o']>div>div>p, article[data-orientation='o']>div>p {
     transform: rotate(-90deg);
+    font-size: 12px;
+}
+article[data-orientation='p']>div>div>p{
+    margin-top: auto;
+    padding: 4px;
+    font-size: 10px;
+}
+article[data-orientation='p']>div>p{
+
 }

@@ -70,8 +70,8 @@
                 <div class="loader"></div>
             </div>
         </section>
-        <main data-orientation='p'>
-            <header data-orientation='p'>
+        <main data-orientation='o'>
+            <header data-orientation='o'>
                 <button data-text ='Record'>
                     <svg
                         version="1.1"
@@ -243,7 +243,7 @@
                     </svg>
                 </button>
             </header>
-            <article id="buttons" data-orientation="p">
+            <article id="buttons" data-orientation="o">
                 <div>
                     <p>B6
                     </p>
@@ -436,15 +436,24 @@
             </article>
         </main>
 
+    <!-- <article class="feedback">
+        <input type="text">
+        <button type="button"></button>
+    </article> -->
+
 
         <script defer>
             function o() {
                 let current = document.getElementsByTagName('main')[0].dataset.orientation
-                if(current = 'o') {current = 'p'}
-                else {current = 'o'}
+                current = change(current)
+                console.log(current)
                 document.getElementsByTagName('article')[0].dataset.orientation = current
                 document.getElementsByTagName('main')[0].dataset.orientation = current
                 document.getElementsByTagName('header')[0].dataset.orientation = current
+            }
+            function change(a) {
+                if (a=='p'){return 'o'}
+                return 'p'
             }
             const isTouchDevice = () => {
             return (('ontouchstart' in window) ||

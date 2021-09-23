@@ -170,7 +170,7 @@ article>div {
 }
 
 article[data-orientation='p']>div {
-    width:5%;
+    min-width:3%;
     height: 75%;
     display: flex;
     justify-content: center;

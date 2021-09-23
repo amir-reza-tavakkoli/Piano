@@ -22,6 +22,16 @@ body {
 button svg {
     width: 40px;
     height: 40px;
+    filter: drop-shadow(
+        -3px 3px 1px gray
+      );
+
+}
+button svg:active {
+    filter: drop-shadow(
+        -1px 2px 1px gray
+      );
+transform: scale(0.9);
 }
 
 /* whole page @@ */
@@ -121,10 +131,11 @@ header[data-orientation='o']>button:hover::after {
     margin: 10px 40px 50px 40px;
 }
 
-header[data-orientation='p']>button:hover::after {
+header[data-orientation='p']>button svg::after {
     position: relative;
-    top: 20px;
-    left: 20px;
+    margin: 100px;
+    top: 30px;
+    left: 40px;
 }
 
 header[data-orientation='o']>button:last-child::after {
@@ -159,7 +170,7 @@ article>div {
 }
 
 article[data-orientation='p']>div {
-    width: 100px;
+    width:5%;
     height: 75%;
     display: flex;
     justify-content: center;
@@ -225,12 +236,15 @@ article[data-orientation='o']>div>div {
 article[data-orientation='p']>div>div {
     width: 50%;
     height: 50%;
-    box-shadow: 3px 1.5px 4px 2px rgba(74, 74, 74, 0.8);
+    box-shadow: -3px 1.5px 4px 2px rgba(74, 74, 74, 0.8);
 
     transform: translateX(-55%);
 }
 
-article>div>div:active {
+article[data-orientation = 'p']>div>div:active {
+    box-shadow: -1.75px 1px 2.25px 1.25px rgba(74, 74, 74, 0.8);
+}
+article[data-orientation = 'o']>div>div:active {
     box-shadow: 1.75px 1px 2.25px 1.25px rgba(74, 74, 74, 0.8);
 }
 
